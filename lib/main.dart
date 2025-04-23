@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
 
       theme: kLightTheme,
       darkTheme: kDarkTheme,
-      themeMode: ThemeMode.light, //isDark ? ThemeMode.dark : ThemeMode.light,
+      themeMode: ThemeMode.dark, //isDark ? ThemeMode.dark : ThemeMode.light,
       home: DialogExample(),
     );
   }
