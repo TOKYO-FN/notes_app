@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/Core/Utils/constant_colors.dart';
+import 'package:notes_app/views/widgets/custom_floating_action_button.dart';
 import 'package:notes_app/views/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -9,12 +9,7 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const NotesViewBody(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: mintGreen,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-        onPressed: () {},
-        child: Icon(Icons.add, color: black),
-      ),
+      floatingActionButton: CustomFloatingActionButton(),
     );
   }
 }
