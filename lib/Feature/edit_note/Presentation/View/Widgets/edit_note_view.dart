@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Feature/note/Presentation/View/widgets/custom_appbar.dart';
-import 'package:notes_app/Feature/note/Presentation/View/widgets/notes_list_view.dart';
+import 'package:notes_app/Feature/note/Presentation/View/widgets/custom_text_field.dart';
 
-class NotesViewBody extends StatelessWidget {
-  const NotesViewBody({super.key});
+class EditNoteViewBody extends StatelessWidget {
+  const EditNoteViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
             SizedBox(
               height: MediaQuery.of(context).padding.top + kToolbarHeight,
               child: CustomAppbar(
-                title: 'Note',
+                title: 'Edit Note',
                 onPressed: () {},
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.check),
               ),
             ),
-
-            SizedBox(height: 5),
-            Expanded(child: ListViewBuilder()),
+            CustomTextFormField(hint: 'title'),
+            SizedBox(height: 10),
+            CustomTextFormField(hint: 'content', maxLines: 6),
           ],
         ),
       ),

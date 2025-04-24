@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomSearchIcon extends StatelessWidget {
-  CustomSearchIcon({super.key, required this.onPressed, required this.icon});
+class CustomIcon extends StatelessWidget {
+  CustomIcon({super.key, required this.onPressed, required this.icon});
   VoidCallback onPressed;
   final Icon icon;
 
