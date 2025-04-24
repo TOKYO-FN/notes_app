@@ -3,7 +3,7 @@ import 'package:notes_app/Core/Utils/constant_colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.onTap});
-  final VoidCallback onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

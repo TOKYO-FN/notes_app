@@ -42,16 +42,7 @@ class _MyAppState extends State<MyApp> {
       theme: kLightTheme,
       darkTheme: kDarkTheme,
       themeMode: ThemeMode.dark, //isDark ? ThemeMode.dark : ThemeMode.light,
-      home: DialogExample(),
+      home: NotesView(),
     );
-  }
-}
-
-class DialogExample extends StatelessWidget {
-  const DialogExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: NotesView());
   }
 }
