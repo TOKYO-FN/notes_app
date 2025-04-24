@@ -14,7 +14,11 @@ class NotesViewBody extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).padding.top + kToolbarHeight - 12,
-              child: CustomAppbar(onPressed: () {}, icon: Icon(Icons.add)),
+              child: CustomAppbar(
+                title: 'Note',
+                onPressed: () {},
+                icon: Icon(Icons.add),
+              ),
             ),
 
             SizedBox(height: 5),

@@ -23,7 +23,11 @@ class EditNoteViewBody extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).padding.top + kToolbarHeight - 12,
-              child: CustomAppbar(onPressed: () {}, icon: Icon(Icons.check)),
+              child: CustomAppbar(
+                title: 'Edit Note',
+                onPressed: () {},
+                icon: Icon(Icons.check),
+              ),
             ),
             CustomTextField(hint: 'title'),
             SizedBox(height: 10),
