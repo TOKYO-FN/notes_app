@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/Core/Utils/constants.dart';
 import 'package:notes_app/Feature/note/Presentation/View/notes_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox(kNotesBox);
   WidgetsFlutterBinding.ensureInitialized();
   final pref = await SharedPreferences.getInstance();
   final isDark = pref.getBool('isDark') ?? false;

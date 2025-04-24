@@ -27,3 +27,5 @@ ThemeData kDarkTheme = ThemeData(
     // bodyMedium: TextStyle(fontWeight: FontWeight.bold),
   ),
 );
+
+const kNotesBox = 'notes_box';
