@@ -26,6 +26,7 @@ class AddNoteForm extends StatefulWidget {
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> key = GlobalKey();
 
+  String? title, content;
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
 
           CustomTextFormField(hint: 'content', maxLines: 6),
           SizedBox(height: 30),
-          CustomButton(),
+          CustomButton(formKey: key),
           SizedBox(height: 16),
         ],
       ),

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/Feature/note/Presentation/View/widgets/custom_search_icon.dart';
 
 class CustomAppbar extends StatelessWidget {
-  CustomAppbar({
+  const CustomAppbar({
     super.key,
     required this.onPressed,
     required this.icon,
     required this.title,
   });
-  VoidCallback onPressed;
+  final void Function() onPressed;
   final String title;
   final Icon icon;
 
