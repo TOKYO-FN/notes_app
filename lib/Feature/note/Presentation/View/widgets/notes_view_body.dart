@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/Feature/note_view/views/widgets/custom_appbar.dart';
-import 'package:notes_app/Feature/note_view/views/widgets/notes_list_view.dart';
+import 'package:notes_app/Feature/note/Presentation/View/widgets/custom_appbar.dart';
+import 'package:notes_app/Feature/note/Presentation/View/widgets/notes_list_view.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -14,7 +14,7 @@ class NotesViewBody extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).padding.top + kToolbarHeight - 12,
-              child: const CustomAppbar(),
+              child: CustomAppbar(onPressed: () {}, icon: Icon(Icons.add)),
             ),
 
             SizedBox(height: 5),

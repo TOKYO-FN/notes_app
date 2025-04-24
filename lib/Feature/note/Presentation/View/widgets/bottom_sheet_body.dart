@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Core/Utils/constant_colors.dart';
-import 'package:notes_app/Feature/note_view/views/widgets/custom_text_field.dart';
+import 'package:notes_app/Feature/note/Presentation/View/widgets/custom_text_field.dart';
 
 class BottomSheetBody extends StatelessWidget {
   const BottomSheetBody({super.key});
