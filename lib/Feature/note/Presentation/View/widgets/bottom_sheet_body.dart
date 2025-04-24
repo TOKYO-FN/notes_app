@@ -36,12 +36,28 @@ class _AddNoteFormState extends State<AddNoteForm> {
       child: Column(
         children: [
           SizedBox(height: 12),
-          CustomTextFormField(hint: 'title'),
+          CustomTextFormField(hint: 'title', onSaved: (value) => title = value),
           SizedBox(height: 10),
 
-          CustomTextFormField(hint: 'content', maxLines: 6),
+          CustomTextFormField(
+            hint: 'content',
+            maxLines: 6,
+            onSaved: (value) => content = value,
+          ),
           SizedBox(height: 30),
-          CustomButton(formKey: key),
+          CustomButton(
+            onTap: () {
+              () {
+                if (key.currentState!.validate()) {
+                  key.currentState!.save();
+                  debugPrint("kk");
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
+              };
+            },
+          ),
           SizedBox(height: 16),
         ],
       ),
