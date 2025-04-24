@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/Core/Utils/constants.dart';
 import 'package:notes_app/Feature/note/Data/Repositories/Models/note_model.dart';
+import 'package:notes_app/Feature/note/Presentation/Manager/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/Feature/note/Presentation/View/notes_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -38,13 +40,16 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => AddNoteCubit())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
 
-      theme: kLightTheme,
-      darkTheme: kDarkTheme,
-      themeMode: ThemeMode.dark, //isDark ? ThemeMode.dark : ThemeMode.light,
-      home: NotesView(),
+        theme: kLightTheme,
+        darkTheme: kDarkTheme,
+        themeMode: ThemeMode.dark, //isDark ? ThemeMode.dark : ThemeMode.light,
+        home: NotesView(),
+      ),
     );
   }
 }
