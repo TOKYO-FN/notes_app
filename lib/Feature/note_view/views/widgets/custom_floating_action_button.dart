@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Core/Utils/constant_colors.dart';
-import 'package:notes_app/views/widgets/bottom_sheet_body.dart';
+import 'package:notes_app/Feature/note_view/views/widgets/bottom_sheet_body.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -17,15 +17,9 @@ class CustomFloatingActionButton extends StatelessWidget {
           ),
           context: context,
           builder:
-              (context) => Padding(
-                padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).viewInsets.bottom,
-                ),
-
-                child: BottomSheet(
-                  onClosing: () {},
-                  builder: (context) => BottomSheetBody(),
-                ),
+              (context) => BottomSheet(
+                onClosing: () {},
+                builder: (context) => BottomSheetBody(),
               ),
         );
       },

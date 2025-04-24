@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Core/Utils/constant_colors.dart';
-import 'package:notes_app/views/widgets/note_item.dart';
+import 'package:notes_app/Feature/note_view/views/widgets/note_item.dart';
 
 class ListViewBuilder extends StatelessWidget {
   const ListViewBuilder({super.key});
