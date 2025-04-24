@@ -7,7 +7,7 @@ class EditNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EditNoteViewBody();
+    return Scaffold(body: EditNoteViewBody());
   }
 }
 
@@ -16,12 +16,21 @@ class EditNoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomAppbar(onPressed: () {}, icon: Icon(Icons.check)),
-        CustomTextField(hint: 'title'),
-        CustomTextField(hint: 'content'),
-      ],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).padding.top + kToolbarHeight - 12,
+              child: CustomAppbar(onPressed: () {}, icon: Icon(Icons.check)),
+            ),
+            CustomTextField(hint: 'title'),
+            SizedBox(height: 10),
+            CustomTextField(hint: 'content', maxLines: 6),
+          ],
+        ),
+      ),
     );
   }
 }
