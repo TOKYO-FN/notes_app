@@ -14,7 +14,18 @@ class BottomSheetBody extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: BlocConsumer<AddNoteCubit, AddNoteState>(
-            listener: (context, state) {},
+            listener: (context, state) {
+              debugPrint(state.toString());
+              if (state is AddNoteFailure) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(state.errorMessage.toString())),
+                );
+              }
+
+              if (state is AddNoteSuccess) {
+                Navigator.pop(context);
+              }
+            },
             builder: (context, state) {
               return ModalProgressHUD(
                 inAsyncCall: state is AddNoteLoading,
