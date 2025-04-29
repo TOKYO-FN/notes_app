@@ -28,8 +28,14 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               child: CustomAppbar(
                 title: 'Edit Note',
                 onPressed: () {
-                  widget.note.title = title ?? widget.note.title;
-                  widget.note.content = content ?? widget.note.content;
+                  widget.note.title =
+                      title == null || title!.isEmpty
+                          ? widget.note.title
+                          : title!;
+                  widget.note.content =
+                      content == null || content!.isEmpty
+                          ? widget.note.content
+                          : content!;
                   widget.note.save();
                   BlocProvider.of<NoteCubit>(context).fetchAllNotes();
                   Navigator.pop(context);
