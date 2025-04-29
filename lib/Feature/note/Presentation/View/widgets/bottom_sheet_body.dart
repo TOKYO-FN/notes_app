@@ -2,6 +2,7 @@ import 'package:cherry_toast/cherry_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Feature/note/Presentation/Manager/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/Feature/note/Presentation/Manager/note_cubit/note_cubit.dart';
 import 'package:notes_app/Feature/note/Presentation/View/widgets/add_note_form.dart';
 
 class BottomSheetBody extends StatelessWidget {
@@ -19,6 +20,7 @@ class BottomSheetBody extends StatelessWidget {
             );
           }
           if (state is AddNoteSuccess) {
+            BlocProvider.of<NoteCubit>(context).fetchAllNotes();
             Navigator.pop(context);
             CherryToast.info(
               disableToastAnimation: true,

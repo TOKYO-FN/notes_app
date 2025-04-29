@@ -51,7 +51,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         title: title!,
                         content: content!,
                         dateTime: DateTime.now().toString(),
-                        color: Colors.white.value,
                       ),
                     );
                   } else {

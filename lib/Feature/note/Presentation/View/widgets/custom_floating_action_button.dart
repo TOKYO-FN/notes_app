@@ -29,7 +29,7 @@ class CustomFloatingActionButton extends StatelessWidget {
               ),
         );
       },
-      child: Icon(Icons.add, color: black),
+      child: const Icon(Icons.add, color: black),
     );
   }
 }
