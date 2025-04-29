@@ -12,14 +12,20 @@ class CustomFloatingActionButton extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       onPressed: () {
         showModalBottomSheet(
+          isScrollControlled: true,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
           context: context,
           builder:
-              (context) => BottomSheet(
-                onClosing: () {},
-                builder: (context) => BottomSheetBody(),
+              (context) => Padding(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: BottomSheet(
+                  onClosing: () {},
+                  builder: (context) => BottomSheetBody(),
+                ),
               ),
         );
       },
